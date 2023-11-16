@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 
-export default function Header() {
+export default function Header(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky" sx={{color: "#F6C927", background: "#121231" }}>
@@ -17,7 +17,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" component="div" >
-            Settings
+            {props.value}
           </Typography>
         </Toolbar>
       </AppBar>
