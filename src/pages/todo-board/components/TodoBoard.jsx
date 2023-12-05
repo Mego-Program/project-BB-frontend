@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import TaskFilter from "./TaskFilter";
 import axios from "axios";
-// import { useParams } from "react-router-dom/dist";
+import { useParams } from "react-router-dom/dist";
 
 const filterData = [
   {
