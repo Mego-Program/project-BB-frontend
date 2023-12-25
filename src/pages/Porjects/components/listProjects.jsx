@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 const token = localStorage.getItem("authToken");
-// console.log("token: " + token)
+// console.log()
 
 const { headers } = [
     {
