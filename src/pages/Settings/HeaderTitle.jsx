@@ -10,10 +10,13 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import IconButton from '@mui/material/IconButton';
 import SendIcon from '@mui/icons-material/Send';
 
+import { useProjectsContext } from "../../context/useProjectContext";
+
 
 function HeaderTitle() {
   const {boardId} = useParams()
-  
+  const { dispatchProjects } = useProjectsContext();
+
   const [titelPage, setTitelPage] = useState("");
   const [descriptionWrite, setDescriptionWrite] = useState("");
 
@@ -28,7 +31,8 @@ function HeaderTitle() {
   },[boardId])
 
   async function updateDataBoard() {
-    await updateData(boardId ,titelPage ,descriptionWrite)
+    const response = await updateData(boardId ,titelPage ,descriptionWrite)
+    dispatchProjects({type: 'UPDATE_PROJECT', payload: response})
   }
   
  const sendData = () => updateDataBoard()
