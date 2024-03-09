@@ -72,7 +72,8 @@ export default function AddTaskModal({
           const updatedProject = projects.find((p) => p._id === boardId);
           updatedProject.tasks = [...updatedProject.tasks, response.data];
           dispatchProjects({ type: "UPDATE_PROJECT", payload: updatedProject });
-          setPreviousState(updatedProject);
+          previousState.tasks = [...previousState.tasks, response.data];
+          setPreviousState(previousState);
         }
       } catch (error) {
         console.error("Error could not fetch JSON file", error);
